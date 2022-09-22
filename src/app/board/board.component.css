@@ -1,0 +1,277 @@
+p {
+  font-family: Lato;
+}
+
+.board {
+  display: flex;
+  width: 100%;
+}
+
+.list {
+  width: 515px;
+  border-radius: 6px;
+  padding: 10px;
+  border: 1px solid rgb(173, 173, 173);
+  height: max-content;
+  background: #ebecf0;
+  text-align: center;
+  margin-right: 15px;
+  position: relative;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  max-width: 460px;
+  min-height: 50px;
+  position: relative;
+  text-decoration: none;
+  z-index: 0;
+  padding: 25px 16px;
+  word-wrap: break-word;
+}
+
+.card:hover {
+  background-color: #f7f7ff;
+}
+
+h1 {
+  color: #fff
+}
+
+button {
+  /* background: rgb(243, 243, 243); */
+  border: 1px solid #ddd;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+button.delete-card {
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  padding: 0px 4px;
+  background: rgb(255, 255, 255);
+  font-size: 11px;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+button.delete-card:hover {
+  cursor: pointer;
+  background: #f7f7f7;
+}
+
+button.card-add-card {
+  width: 100%;
+  font-size: 24px;
+  padding: 0;
+  text-align: start;
+  background-color: transparent;
+  border: none;
+  /* background: rgb(222, 222, 228); */
+}
+.card-add-card::after{
+  content: "";
+  position: absolute;
+  top: 16px;
+  left: 30px;
+  height: 13px;
+  width: 150px;
+  background-color: #c1c7d0;
+}
+
+button.add-card:hover {
+  background: rgb(217, 217, 227);
+}
+
+ul.dropdown-list {
+  background: #333;
+  color: #fff;
+  list-style: none;
+  text-align: left;
+  position: absolute;
+  top: 35px;
+  right: 0;
+  z-index: 2;
+  padding: 5px;
+}
+
+ul.dropdown-list li {
+  padding: 5px 15px;
+}
+
+ul.dropdown-list li:hover {
+  background: #111;
+  cursor: pointer;
+}
+
+/*
+    CDK  Angular Drag n Drop
+  */
+/* .card:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-preview {
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+    0 8px 10px 1px rgba(0, 0, 0, 0.14),
+    0 3px 14px 5px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+/* Animate items as they're being sorted. */
+/* .cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drop-list-dragging {
+  background: #d1f5ed;
+}  */
+
+
+
+
+/* form */
+
+
+textarea,
+input,
+select {
+  width: 100%
+}
+
+.form-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.card_heading {
+  font-size: 20px;
+  font-weight: bold;
+  text-align: start;
+  padding: 10px;
+}
+
+.line_content {
+  position: relative;
+}
+.line{
+  height: 10px;
+    width: 160px;
+    background: rgb(150, 150, 150);
+}
+.line::after {
+  content: "";
+  height: 11px;
+  border-radius: 20px;
+  width: 66px;
+  margin-bottom: 10px;
+  position: absolute;
+  top: -19px;
+  left: 0;
+  background-color: #00c7e6;
+}
+
+.line::before {
+  content: "";
+  margin-bottom: 10px;
+  height: 11px;
+  border-radius: 20px;
+  width: 66px;
+  position: absolute;
+  top: -19px;
+  left: 70px;
+  background-color: #ff80ce;
+}
+
+.card_txt {
+  text-align: start;
+  padding-top: 10px;
+  display: flex;
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.sec_two {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+
+}
+.sec_three{
+  display: flex;
+  justify-content: space-between;
+  padding-top: 20px;
+  background: #fff;
+  margin-top: -9px;
+}
+.card_icon i {
+  padding-right: 16px;
+  padding-left: 10px;
+}
+
+.img_theme {
+  padding: 0px 8px;
+  width: 30px;
+}
+
+.card_part_two {
+  border-radius: 6px;
+  padding: 20px 10px;
+  border: 1px solid rgb(173, 173, 173);
+  background: #fff;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 15px;
+  box-shadow: 0 1px 0 rgb(9 30 66 / 25%);
+}
+
+.content_line {
+  height: 12px;
+  width: 100px;
+  background-color: #ebecf0;
+}
+
+.plus_btn_box {
+  border-radius: 6px;
+  padding: 10px 0px;
+ position: relative;
+  text-align: center;
+  margin-top: 20px;
+  margin-right: 15px;
+}
+
+.card_two {
+  background-color: rgb(206, 206, 248);
+  border-radius: 3px;
+  box-shadow: 0 1px 0 rgba(9, 30, 66, .25);
+  cursor: pointer;
+  display: block;
+  margin-bottom: 8px;
+  margin-top: 10px;
+  max-width: 483px;
+  min-height: 90px;
+  position: relative;
+  text-decoration: none;
+  z-index: 0;
+  padding: 25px 16px;
+  word-wrap: break-word;
+}

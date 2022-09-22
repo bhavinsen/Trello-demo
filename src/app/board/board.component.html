@@ -1,0 +1,281 @@
+<div cdkDropListGroup class="board">
+  <!-- LIST-->
+ 
+  <div cdkDropList [cdkDropListData]="board[0].cards" (cdkDropListDropped)="drop($event, 0)" class="list">
+
+    <!-- View TitleList or Input -->
+    <div class="card_heading">
+      <span *ngIf="editingListId != board[0].id" (click)="editTitleList(board[0])">{{board[0].name}}</span>
+    </div>
+
+    <div style="display:flex; justify-content:center" *ngIf="titleListEditor && editingListId == board[0].id">
+      <input #titleListInput [value]="board[0].name">
+      <!-- <button (click)="getTitleListOnKeyUp(titleListInput.value, list)">OK</button> -->
+    </div>
+
+    <button (click)="deleteListAction(board[0])" class="delete-card">X</button>
+
+
+    <!-- CARD -->
+    <div [style.borderLeft]="getCardStyle(card)" (click)="openModal(card)" cdkDrag *ngFor="let card of board[0].cards"
+      class="card">
+      <div class="line_content">
+        <div class="line">
+        </div>
+      </div>
+      <span class="card_txt">{{card.content}}</span>
+      <div class="sec_two">
+        <div class="card_icon">
+          <i class="fa-solid fa-eye"></i>
+          <i class="fa-solid fa-paperclip">2</i>
+        </div>
+        <div class="images">
+          <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+          <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+        </div>
+      </div>
+      <button (click)="deleteCardAction($event, board[0].id, card.id)" class="delete-card">X</button>
+    </div>
+    <!-- END CARD -->
+    <div class="card_part_two">
+      <div class="content_line">
+
+      </div>
+    </div>
+   <div class="plus_btn_box">
+    <button class="card-add-card" (click)="addformopen(board[0].id)">+</button>
+   </div>
+    <!-- <button class="add-card" (click)="addCardAction(list.id)">+</button> -->
+
+
+  </div>
+  
+
+
+
+  <div cdkDropList [cdkDropListData]="board[1].cards" (cdkDropListDropped)="drop($event, 1)" class="list">
+
+    <!-- View TitleList or Input -->
+    <div class="card_heading">
+      <span *ngIf="editingListId != board[1].id" (click)="editTitleList(board[1])">{{board[1].name}}</span>
+    </div>
+
+    <div style="display:flex; justify-content:center" *ngIf="titleListEditor && editingListId == board[1].id">
+      <input #titleListInput [value]="board[1].name">
+      <!-- <button (click)="getTitleListOnKeyUp(titleListInput.value, list)">OK</button> -->
+    </div>
+
+    <button (click)="deleteListAction(board[1])" class="delete-card">X</button>
+
+
+    <!-- CARD -->
+    <div  (click)="openModal(board[1].cards[0])" cdkDrag 
+      class="card">
+      <div class="line_content">
+        <div class="line">
+        </div>
+      </div>
+      <span class="card_txt">{{board[1].cards[0].content}}</span>
+      <div class="sec_two">
+        <div class="card_icon">
+          <i class="fa-solid fa-eye"></i>
+          <i class="fa-light fa-file-circle-check"> 2/10</i>
+        </div>
+        <div class="images">
+          <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+          <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+        </div>
+      </div>
+      <button (click)="deleteCardAction($event, board[1].id, board[1].cards[0].id)" class="delete-card">X</button>
+    </div>
+
+    <!-- END CARD1 -->
+    
+    <div class="card_part_two">
+      <div class="content_line">
+
+      </div>
+    </div>
+
+    <div  (click)="openModal(board[1].cards[1])" cdkDrag 
+    class="card_two">
+    <div class="line_content">
+      <div class="line">
+      </div>
+    </div>
+    <!-- <span class="card_txt">{{board[1].cards[1].content}}</span>  -->
+    <button (click)="deleteCardAction($event, board[1].id, board[1].cards[1].id)" class="delete-card">X</button>
+  </div>
+  <div class="sec_three">
+    <div class="card_icon">
+      <i class="fa-solid fa-eye"></i>
+      <i class="fa-light fa-file-circle-check"> 2/10</i>
+    </div>
+    <div class="images">
+      <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+      <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+    </div>
+  </div>
+
+    
+  <div class="plus_btn_box">
+    <button class="card-add-card" (click)="addformopen(board[1].id)">+</button>
+   </div>
+    <!-- <button class="add-card" (click)="addCardAction(list.id)">+</button> -->
+  </div>
+
+
+
+  <div cdkDropList [cdkDropListData]="board[2].cards" (cdkDropListDropped)="drop($event, 2)" class="list">
+
+    <!-- View TitleList or Input -->
+    <span *ngIf="editingListId != board[2].id" (click)="editTitleList(board[1])"
+      >{{board[2].name}}</span>
+
+    <div style="display:flex; justify-content:center" *ngIf="titleListEditor && editingListId == board[1].id">
+      <input #titleListInput [value]="board[1].name">
+      <!-- <button (click)="getTitleListOnKeyUp(titleListInput.value, list)">OK</button> -->
+    </div>
+
+    <button (click)="deleteListAction(board[2])" class="delete-card">X</button>
+    <div class="card_part_two">
+      <div class="content_line">
+
+      </div>
+    </div>
+
+    <!-- CARD -->
+    <div  (click)="openModal(board[2].cards[0])" cdkDrag
+      class="card">
+      <div class="line_content">
+        <div class="line">
+        </div>
+      </div>
+      <!-- <span>{{board[2].cards[0].content}}</span> -->
+      <div class="sec_two">
+        <div class="card_icon">
+          <i class="fa-solid fa-chart-simple-horizontal"></i>
+           <i class="fa-solid fa-paperclip">2</i>
+        </div>
+        <div class="images">
+          <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+          <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+        </div>
+      </div>
+      <button (click)="deleteCardAction($event, board[2].id, board[1].cards[0].id)" class="delete-card">X</button>
+    </div>
+    <!-- END CARD 1 -->
+
+
+    <div  (click)="openModal(board[2].cards[1])" cdkDrag
+    class="card">
+    <div class="line_content">
+      <div class="line">
+      </div>
+    </div>
+    <!-- <span>{{board[2].cards[0].content}}</span> -->
+    <div class="sec_two">
+      <div class="card_icon">
+        <i class="fa-solid fa-eye"></i>
+        <i class="fa-regular fa-clock"> Feb 12 </i>  </div>
+      <div class="images">
+        <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+        <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+      </div>
+    </div>
+
+    <div  (click)="openModal(board[2].cards[2])" cdkDrag 
+    class="card_two">
+    <div class="line_content">
+      <div class="line">
+      </div>
+    </div>
+    <!-- <span class="card_txt">{{board[1].cards[1].content}}</span>  -->
+    <button (click)="deleteCardAction($event, board[2].id, board[2].cards[2].id)" class="delete-card">X</button>
+  </div>
+  <div class="sec_three">
+    <div class="card_icon">
+      <i class="fa-solid fa-eye"></i>
+      <i class="fa-light fa-file-circle-check"> 10/10</i>
+    </div>
+    <div class="images">
+      <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+      <img src="../../assets/default_testimonials.png" class="img_theme" alt="">
+    </div>
+  </div>
+
+  <div class="card_part_two">
+    <div class="content_line">
+
+    </div>
+  </div>
+
+
+    <button (click)="deleteCardAction($event, board[2].id, board[2].cards[1].id)" class="delete-card">X</button>
+  </div>
+
+
+
+  <!-- end card 2 -->
+
+
+
+  <div class="plus_btn_box">
+
+    <button class="card-add-card" (click)="addformopen(board[2].id)">+</button>
+    <!-- <button class="add-card" (click)="addCardAction(list.id)">+</button> -->
+</div>
+
+
+
+  </div>
+
+</div>
+
+
+
+
+<div *ngIf="isModalOpen" class="modal">
+  <button (click)="closeModal()" class="close">X</button>
+
+  <app-card-modal (formSubmitEvent)="closeModal()" [selectedCard]="cardObject"></app-card-modal>
+
+</div>
+
+
+
+<div *ngIf="isModalOpen" class="backdrop"></div>
+
+
+<div class="modal" *ngIf="isopenfrom">
+  <button (click)="closeModal1()" class="close">X</button>
+  <form *ngIf="!openForm" [formGroup]="addForm">
+    <label>id</label>
+
+    <input formControlName="id" type="number">
+
+    <label>Title</label>
+    <input formControlName="title" type="" (keyup)="titleerror()">
+    <div class="" style=" color: red;" *ngIf="erroe13 === true">
+      <p>title is required</p>
+    </div>
+    <label>description </label>
+    <textarea formControlName="content" cols="" rows="" (keyup)="descriptionerror()"></textarea>
+
+    <div class="" style=" color: red;" *ngIf="erroe12 === true">
+      <p>Minimum 25 caractères</p>
+    </div>
+
+    <!-- cardForm.priority -->
+    <label>selection</label>
+    <select formControlName="priority">
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>
+
+    <div class="form-button">
+      <button type="submit" (click)="addCardAction(addForm)">Submit</button>
+    </div>
+  </form>
+</div>
